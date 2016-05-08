@@ -36,4 +36,4 @@ but I got this: `URL.createObjectURL()` and `URL.revokeObjectURL()` in HTML5 Fil
 
 I wrote app.js first,like a view in Backbone,initial some DOM var for app and event binding
 
-Then I wrote music-list and music-model, actually these works were done in the same
+Then I wrote music-list and music-model, actually these works were done in the same time

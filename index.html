@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Music Player with ES5</title>
+    <meta charset="UTF-8">
+    <title>Music Player with ES5</title>
 </head>
+
 <body>
-	<input id="music-list" type="file" accept="audio/*" webkitdirectory directory multiple />
-	<audio id="audio" src="">
-		<source id="audio-source" src="">
-	</audio>
-	<button id="play">播放</button>
-	
-	<script src="js/app.js"></script>
-	<script src="js/music-list.js"></script>
-	<script src="js/music-model.js"></script>
-	
+    <input id="music-list" type="file" accept="audio/*" webkitdirectory directory multiple />
+    <audio id="audio" src="">
+        <source id="audio-source" src="">
+    </audio>
+    
+    <div id="switch-container">
+        <button id="next" alt="下一首">下一首</button>
+        <button id="play">播放</button>
+        <button id="pre" alt="上一首">上一首</button>
+    </div>
+    <script src="js/app.js"></script>
+    <script src="js/music-list.js"></script>
+    <script src="js/music-model.js"></script>
 </body>
+
 </html>

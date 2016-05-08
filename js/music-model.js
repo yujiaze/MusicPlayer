@@ -17,6 +17,6 @@
         };
         return _musicModel;
     }
-    window.app.musicModel = musicModel;
+    app.musicModel = musicModel;
 
 })();

@@ -1,4 +1,5 @@
 (function() {
+    'use strict';
     var musicList = {
         _musicList: [],
         init: function(files) {
@@ -18,5 +19,5 @@
         }
 
     }
-    window.app.musicList = musicList;
+    app.musicList = musicList;
 }());
