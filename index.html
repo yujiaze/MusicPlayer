@@ -4,14 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Music Player with ES5</title>
+    <style type="text/css">
+		#progress-bar{
+			width: 200px;
+			height: 20px;
+			background:green;
+		}
+		#cursor{
+			width:20px;
+			height: 20px;
+			background: red;
+			cursor: pointer;
+			position: relative;
+			left: 0px;
+		}
+    </style>
 </head>
 
 <body>
-    <input id="music-list" type="file" accept="audio/*" webkitdirectory directory multiple />
+    <input id="music-input" type="file" accept="audio/*" webkitdirectory directory multiple />
     <audio id="audio" src="">
         <source id="audio-source" src="">
     </audio>
-    
+    <div id="progress-bar">
+    	<div id="cursor"></div>
+    </div>
+    <ul id="music-list"></ul>
     <div id="switch-container">
         <button id="next" alt="下一首">下一首</button>
         <button id="play">播放</button>
