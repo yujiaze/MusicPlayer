@@ -17,6 +17,7 @@
             this.switchDOM.addEventListener('click', this.handleSwitch.bind(app));
             //forgery event parameter for this callback to acheive autoplay
             this.audioDOM.addEventListener('ended', this.handleSwitch.bind(app, { target: { id: 'next' } }));
+            this.progressBarDOM.addEventListener('click', this.renderProgressBar.bind(app));
         },
         handleInput: function(e) {
             this.processedFiles = app.musicList.init(e.target.files);
@@ -98,7 +99,16 @@
                 me.musicListDOM.appendChild(li);
             });
         },
-        renderProgressBar: function() {
+        //when playing render it,when click the progress bar render it too,tell them apart by if(e);
+        //I found that I can't get element.style.width,but element.offsetWidth and element.clientWidth works;
+        renderProgressBar: function(e) {
+            if (e) {
+                this.audioDOM.currentTime =
+                    parseFloat(e.offsetX / 200 * this.audioDOM.duration);
+                this.progressBarDOM.children[0].style.left =
+                    (this.audioDOM.currentTime / this.audioDOM.duration) * 200 + 'px';
+                return;
+            }
             clearInterval(a);
             var a = setInterval(function() {
                 this.progressBarDOM.children[0].style.left =
